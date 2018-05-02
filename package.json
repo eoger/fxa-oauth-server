@@ -30,7 +30,7 @@
     "convict": "4.0.2",
     "fxa-jwtool": "^0.7.1",
     "fxa-notifier-aws": "1.0.0",
-    "fxa-shared": "1.0.5",
+    "fxa-shared": "git://github.com/mozilla/fxa-shared.git#25e4cbd2ffece23fa7f00c903a89b6f8e74f907d",
     "hapi": "16.6.3",
     "hapi-hpkp": "1.0.0",
     "joi": "^10.0.1",

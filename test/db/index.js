@@ -7,6 +7,7 @@ const crypto = require('crypto');
 const assert = require('insist');
 const buf = require('buf').hex;
 const hex = require('buf').to.hex;
+const Scope = require('fxa-shared').oauth.scope;
 
 const encrypt = require('../../lib/encrypt');
 const db = require('../../lib/db');
@@ -329,7 +330,7 @@ describe('db', function() {
     var clientId = buf(randomString(8));
     var userId = buf(randomString(16));
     var email = 'a@b.c';
-    var scope = ['no-scope'];
+    var scope = Scope.fromArray(['no_scope']);
     var code = null;
     var token = null;
     var refreshToken = null;
@@ -404,7 +405,7 @@ describe('db', function() {
       const clientId = buf(randomString(8));
       const userId = buf(randomString(16));
       const email = 'a@b' + randomString(16) + ' + .c';
-      const scope = ['no-scope'];
+      const scope = ['no_scope'];
       let tokenIdHash;
       let refreshTokenIdHash;
 
@@ -496,7 +497,7 @@ describe('db', function() {
     var clientId = buf(randomString(8));
     var userId = buf(randomString(16));
     var email = 'a@b.c';
-    var scope = ['no-scope'];
+    var scope = ['no_scope'];
     var code = null;
     var refreshToken = null;
 
@@ -723,7 +724,7 @@ describe('db', function() {
       var clientId = buf(randomString(8));
       var userId = buf(randomString(16));
       var email = 'a@b.c';
-      var scope = ['no-scope'];
+      var scope = ['no_scope'];
       var code = null;
 
       before(function() {

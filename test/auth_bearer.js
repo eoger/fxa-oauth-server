@@ -10,6 +10,7 @@ const proxyquire = require('proxyquire');
 const AppError = require('../lib/error');
 const P = require('../lib/promise');
 const sinon = require('sinon');
+const Scope = require('fxa-shared').oauth.scope;
 
 const modulePath = '../lib/auth_bearer';
 const mockRequest = {
@@ -30,7 +31,7 @@ describe('authBearer', function() {
 
     sandbox.stub(dependencies['../../../lib/token'], 'verify', function() {
       return P.resolve({
-        scope: ['bar:foo', 'clients:write'],
+        scope: Scope.fromArray(['bar:foo', 'clients:write']),
         user: 'bar'
       });
     });
